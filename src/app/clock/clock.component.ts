@@ -10,19 +10,25 @@ export class ClockComponent implements OnInit {
   public hoursText: string = "";
   public minutesText: string = "";
   public secondsText: string = "";
+  // The rows array holds the status of each filed in each row for the clock
+  // Each field can be either true or false (light on/off)
   public rows: boolean[][] = [];
   public secondsStatus = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    // Set default status
     this.fillRowsArray();
+    // Update the clock every second
     setInterval(() => {
       let date: Date = new Date;
       this.updateDate(date);
     }, 1000);
   }
 
+  // Initialize all fields of the rows array with value "false"
+  // This means the light for each field in each row is off (no time is displayed)
   private fillRowsArray(): void {
     for (let r: number = 0; r < 4; r++) {
       this.rows[r] = [];
@@ -32,17 +38,24 @@ export class ClockComponent implements OnInit {
         this.rows[r][i] = false;
       }
     }
-    console.log(this.rows);
   }
 
+  // Update the clock by turning on/off the lights according to the current time
   private updateDate(date: Date): void { 
 
+    // Get the current time
     let hours: number = date.getHours();
     let minutes: number = date.getMinutes();
     let seconds: number = date.getSeconds();
 
+    // Let the seconds light blink every two seconds
     this.secondsStatus  = !this.secondsStatus;
 
+    // Calculate for each row how much lights should be on/off at the current time
+    // Turn on/off the lights in each field according to the calculation
+    // "true" = light on, "false" = light off
+
+    // 5 hours row
     let hoursFirst: number = Math.floor(hours / 5);
     for (let i: number = 0; i < 4; i++) {
       if(i < hoursFirst) {
@@ -52,6 +65,7 @@ export class ClockComponent implements OnInit {
       }
     }
 
+    // 1 hour row
     let hoursSecond: number = Math.floor(hours % 5);
     for (let i: number = 0; i < 4; i++) {
       if(i < hoursSecond) {
@@ -61,6 +75,7 @@ export class ClockComponent implements OnInit {
       }
     }
 
+    // 5 minutes row
     let minutesFirst: number = Math.floor(minutes / 5);
     for (let i: number = 0; i < 11; i++) {
       if(i < minutesFirst) {
@@ -70,6 +85,7 @@ export class ClockComponent implements OnInit {
       }
     }
 
+    // 1 minute row
     let minutesSecond: number = Math.floor(minutes % 5);
     for (let i: number = 0; i < 4; i++) {
       if(i < minutesSecond) {
@@ -79,6 +95,7 @@ export class ClockComponent implements OnInit {
       }
     }
 
+    // Format text for digital clock view
     if (hours < 10) {
       this.hoursText = "0" + hours;
     } else {

@@ -4,12 +4,14 @@
 
         <div class="text title">Berliner Uhr</div>
 
+        <!-- Seconds row -->
         <div class="seconds-border">
             <div class="seconds">
                 <div [ngClass]="{'on-yellow': secondsStatus}" class="inner-circle"></div>
             </div>
         </div>
-        
+
+        <!-- 5 hours row -->
         <div class="rows">
             <div [ngClass]="{'on-red': rows[0][0]}" class="big-block left"></div>
             <div [ngClass]="{'on-red': rows[0][1]}" class="big-block"></div>
@@ -17,6 +19,7 @@
             <div [ngClass]="{'on-red': rows[0][3]}" class="big-block right"></div>
         </div>
 
+        <!-- 1 hour row -->
         <div class="rows">
             <div [ngClass]="{'on-red': rows[1][0]}" class="big-block left"></div>
             <div [ngClass]="{'on-red': rows[1][1]}" class="big-block"></div>
@@ -24,6 +27,7 @@
             <div [ngClass]="{'on-red': rows[1][3]}" class="big-block right"></div>
         </div>
 
+        <!-- 5 minutes row -->
         <div class="rows">
             <div [ngClass]="{'on-yellow': rows[2][0]}" class="small-block left"></div>
             <div [ngClass]="{'on-yellow': rows[2][1]}" class="small-block"></div>
@@ -38,6 +42,7 @@
             <div [ngClass]="{'on-yellow': rows[2][10]}" class="small-block right"></div>
         </div>
 
+        <!-- 1 minute row -->
         <div class="rows">
             <div [ngClass]="{'on-yellow': rows[3][0]}" class="big-block yellow left"></div>
             <div [ngClass]="{'on-yellow': rows[3][1]}" class="big-block yellow"></div>
@@ -45,6 +50,7 @@
             <div [ngClass]="{'on-yellow': rows[3][3]}" class="big-block yellow right"></div>
         </div>
 
+        <!-- Digital clock -->
         <div class="text">
             {{hoursText}} : {{minutesText}} : {{secondsText}}
         </div>    
