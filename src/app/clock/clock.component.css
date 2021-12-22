@@ -1,0 +1,139 @@
+.wrapper {
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1abc9c;
+  background-image: url("/assets/images/berlin.png");
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+.berlin-lights {
+  position: relative;
+  height: 700px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: black solid;
+}
+
+.text {
+  position: relative;
+  height: 100px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  font-family: 'Share Tech Mono', monospace;
+  color: #daf6ff;
+  text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgba(10, 175, 230, 0);
+  letter-spacing: 0.05em;
+  font-size: 50px;
+}
+
+.text.title {
+  font-size: 5.5rem;
+}
+
+.seconds-border {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  position: relative;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.seconds {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: rgb(218,166,97);
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rows {
+  border-radius: 20px;
+  width: 350px;
+  height: 60px;
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  align-content: space-between;
+  gap:8px;
+  display: flex;
+  padding: 5px;
+  margin-top: 7px;
+}
+
+.big-block {
+  width: 25%;
+  height: 50px;
+  padding: 20px;
+  display: flex;
+  background-color: rgb(95, 71, 76);
+}
+
+.big-block.yellow {
+  background-color: rgb(190, 149, 90);
+}
+
+.big-block.left {
+  border-radius: 15px 0 0 15px;
+}
+
+.big-block.right {
+  border-radius: 0 15px 15px 0;
+}
+
+.small-block {
+  width: 9.09%;
+  height: 50px;
+  border-radius: 0 0;
+  display: flex;
+  background-color: rgb(190, 149, 90);
+}
+
+.small-block.red {
+  background-color: rgb(95, 71, 76);
+}
+
+.small-block.left {
+  border-radius: 15px 0 0 15px;
+}
+
+.small-block.right {
+  border-radius: 0 15px 15px 0;
+}
+
+.on-red {   
+  background-image: radial-gradient(circle, rgb(255,248,0), rgb(255,180,102), rgb(255,96,118), rgb(253, 77, 101));
+}
+
+.on-yellow {   
+  background-image: radial-gradient(circle, rgb(250, 249, 225), rgb(250, 247, 173), rgb(255,248,0), rgb(235, 179, 101));
+}
+  
