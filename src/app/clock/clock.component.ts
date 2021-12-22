@@ -10,7 +10,7 @@ export class ClockComponent implements OnInit {
   public hoursText: string = "";
   public minutesText: string = "";
   public secondsText: string = "";
-  // The rows array holds the status of each filed in each row for the clock
+  // The rows array holds the status of each field in each row for the clock
   // Each field can be either true or false (light on/off)
   public rows: boolean[][] = [];
   public secondsStatus = false;
